@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "685be8c8-c6ce-4daa-8206-c2201bdd9813",
+		"name": "RCA STOCK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26199339"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"firstName\":\"liza\",\n   \"lastName\":\"louange\",\n   \"email\":\"mbabazilouangeliza@gmail.com\",\n   \"password\":\"Liza@123/\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Activating Account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/activate-account?token=725958",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"activate-account"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "725958"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\":\"mbabazilouangeliza@gmail.com\",\n   \"password\":\"Liza@123/\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/authenticate"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"email\":\"mbabazilouangeliza@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/forgot-password?email=mbabazilouangeliza@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "mbabazilouangeliza@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/reset-password?token=7f81fa3b-7a9c-4421-9a1e-4765c062b2931abfc0e7-8b55-4c10-a756-03db56b1c449&password=nice@123/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "7f81fa3b-7a9c-4421-9a1e-4765c062b2931abfc0e7-8b55-4c10-a756-03db56b1c449"
+								},
+								{
+									"key": "password",
+									"value": "nice@123/"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"firstName\":\"liza\",\n   \"lastName\":\"louange\",\n   \"email\":\"mbabazilouangeliza@gmail.com\",\n   \"password\":\"Liza@123/\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/register-admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Register Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"firstName\":\"liza\",\n   \"lastName\":\"louange\",\n   \"email\":\"mbabazilouangeliza@gmail.com\",\n   \"password\":\"Liza@123/\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/auth/register-manager"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StockItem",
+			"item": [
+				{
+					"name": "Adding item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"sponge\",\n    \"category\":\"cleaning\",\n    \"quantity\":\"30\",\n    \"price\":\"500\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/stock-items"
+					},
+					"response": []
+				},
+				{
+					"name": "getting all items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/stock-items"
+					},
+					"response": []
+				},
+				{
+					"name": "getting a single item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/stock-items/1"
+					},
+					"response": []
+				},
+				{
+					"name": "updating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"rice\",\n    \"category\":\"food\",\n    \"quantity\":\"1000000000\",\n    \"price\":\"1200\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/stock-items/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Deleting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/stock-items/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Adding order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\":1,\n    \"status\":\"pending\",\n    \"date\":\"2024-07-18T12:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/2?status=Granted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"2"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Granted"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/orders/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Create a new supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"amandazi\",\n    \"contactDetails\":\"number: 0789456723, email:ndfh@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/suppliers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Suppliers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/suppliers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/suppliers/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Gwiza\",\n    \"contactDetails\":\"product:imigati, number: 0789456723, email:ndfh@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/suppliers/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJmdWxsTmFtZSI6ImxpemEgbG91YW5nZSIsInN1YiI6Im1iYWJhemlsb3VhbmdlbGl6YUBnbWFpbC5jb20iLCJpYXQiOjE3MjEyMjMzOTgsImV4cCI6MTcyMTMwOTc5OH0.af4FDoQTcv6PDp6kwK6_x145_XJ9RNYrzSC3fHNF0Gw"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/suppliers/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

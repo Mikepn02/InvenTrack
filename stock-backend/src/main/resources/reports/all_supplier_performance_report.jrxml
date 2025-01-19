@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="all_supplier_performance_report" pageWidth="595" pageHeight="842" columnWidth="515">
+
+    <!-- Define fields that correspond to supplier performance metrics -->
+    <field name="supplierName" class="java.lang.String"/> <!-- Supplier's name -->
+    <field name="numOrders" class="java.lang.Integer"/> <!-- Number of orders -->
+    <field name="avgDeliveryTime" class="java.lang.Double"/> <!-- Average delivery time in days -->
+
+<!--    &lt;!&ndash; Define parameters &ndash;&gt;-->
+<!--    <parameter name="startDate" class="java.util.Date"/>-->
+<!--    <parameter name="endDate" class="java.util.Date"/>-->
+
+    <!-- Title Section -->
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="30"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[All Suppliers Performance Report]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- Column Header Section -->
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <text><![CDATA[Supplier Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="0" width="150" height="20"/>
+                <text><![CDATA[Number of Orders]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="165" height="20"/>
+                <text><![CDATA[Avg Delivery Time (days)]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Detail Section -->
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <textFieldExpression><![CDATA[$F{supplierName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{numOrders}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="165" height="20"/>
+                <textFieldExpression><![CDATA[$F{avgDeliveryTime}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <!-- Summary Section -->
+    <summary>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="20"/>
+                <text><![CDATA[Report Period: ]]></text>
+            </staticText>
+<!--            <textField>-->
+<!--                <reportElement x="100" y="0" width="200" height="20"/>-->
+<!--                <textFieldExpression><![CDATA[$P{startDate} + " to " + $P{endDate}]]></textFieldExpression>-->
+<!--            </textField>-->
+        </band>
+    </summary>
+
+</jasperReport>

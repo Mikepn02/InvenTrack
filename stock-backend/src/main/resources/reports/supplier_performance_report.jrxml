@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="supplier_performance_report" pageWidth="595" pageHeight="842" columnWidth="515">
+
+    <!-- Define fields that correspond to supplier performance metrics -->
+    <field name="supplierName" class="java.lang.String"/> <!-- Supplier's name -->
+    <field name="numOrders" class="java.lang.Integer"/> <!-- Number of orders -->
+    <field name="avgDeliveryTime" class="java.lang.Double"/> <!-- Average delivery time in days -->
+
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="515" height="30"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <text><![CDATA[Supplier Performance Report]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <text><![CDATA[Supplier Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="0" width="150" height="20"/>
+                <text><![CDATA[Number of Orders]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="165" height="20"/>
+                <text><![CDATA[Avg Delivery Time (days)]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="20"/>
+                <textFieldExpression><![CDATA[$F{supplierName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{numOrders}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="165" height="20"/>
+                <textFieldExpression><![CDATA[$F{avgDeliveryTime}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

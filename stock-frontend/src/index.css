@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.radio-square .mantine-Radio-radio {
+    border-radius: 4px; /* Makes it square */
+  }
+  
+  .radio-square .mantine-Radio-radio::before {
+    border-radius: 4px; /* Inner circle square */
+  }
+  
+  @layer base {
+  :root {
+        --radius: 0.5rem
+    }
+}
+  
